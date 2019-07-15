@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ModalPage } from '../modal/modal';
-import { LugaresProvider } from '../../providers/lugares/lugares'
+import { LugaresProvider } from '../../providers/lugares/lugares';
 // import { LugarPage } from '../lugar/lugar';
 
 
@@ -13,16 +13,14 @@ import { LugaresProvider } from '../../providers/lugares/lugares'
 })
 export class Tab3Page {
 
-  lugares: any=[
-    {nombre:'jonathan', ocupacion:'estudiante', direccion:'calle y carrera'},
-    {nombre:'camilo', ocupacion:'estudiante', direccion:'calle y carrera'},
-    {nombre:'lao', ocupacion:'conductor', direccion:'calle y carrera'}
-
-  ];
+  lugares: any=[];
+  lugar:any={};
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public modalCtrl:ModalController, public lp:LugaresProvider) {
+      this.lp.getLugares().valueChanges()
+      .subscribe((equiposFB)=>{this.lugares=equiposFB;})
   }
 
   ionViewDidLoad() {
@@ -30,7 +28,8 @@ export class Tab3Page {
   }
 
   irAdetallesExistentes(){
-    
+    this.navCtrl.push(ModalPage, {lugar:this.lugar})
+
   }
 
   irAdetalles(){

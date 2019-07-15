@@ -16,6 +16,8 @@ import { Tab2Page } from '../pages/tab2/tab2';
 import { Tab3Page } from '../pages/tab3/tab3';
 import { ModalPage } from '../pages/modal/modal';
 import { LugaresProvider } from '../providers/lugares/lugares';
+import { Modal2Page } from '../pages/modal2/modal2';
+import { EquiposProvider } from '../providers/equipos/equipos';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBp9Km9DgFI9hpYe6SGMh7vEifCMC3S49w",
@@ -35,6 +37,7 @@ export const firebaseConfig = {
     Tab2Page,
     Tab3Page,
     ModalPage,
+    Modal2Page
 
   ],
   imports: [
@@ -53,13 +56,15 @@ export const firebaseConfig = {
     Tab2Page,
     Tab3Page,
     ModalPage,
+    Modal2Page
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LugaresProvider
+    LugaresProvider,
+    EquiposProvider
   ]
 })
 export class AppModule {}
