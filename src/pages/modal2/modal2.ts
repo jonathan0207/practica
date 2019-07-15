@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angular';
-import { EquiposProvider } from '../../providers/equipos/equipos'
-import { TabsPage } from '../tabs/tabs';
-
+import { CitasProvider } from '../../providers/equipos/citas';
 /**
  * Generated class for the Modal2Page page.
  *
@@ -17,9 +15,9 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class Modal2Page {
 
-  equipo:any={};
+  cita:any={};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController, public ep:EquiposProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController, public cp:CitasProvider) {
   }
 
   ionViewDidLoad() {
@@ -31,10 +29,11 @@ export class Modal2Page {
   }
 
   guardarLugar(){
-  
-    this.equipo.id=Date.now();
-    this.ep.createEquipo(this.equipo);
-    console.log(this.equipo);
+    if(!this.cita.id){
+      this.cita.id=Date.now();
+
+    } this.cp.createcita(this.cita);
+    console.log(this.cita);
     alert('Se Guardo Con Exito');
     this.navCtrl.pop();
     // if(this.guardarLugar){

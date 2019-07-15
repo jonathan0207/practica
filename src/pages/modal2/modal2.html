@@ -17,29 +17,29 @@
     <ion-list>
       <body>
         <ion-item>
-          <ion-label>Equipo</ion-label>
+          <ion-label>Tipo cita</ion-label>
 
           <ion-input
             type="text"
-            [(ngModel)]="equipo.nombre"
+            [(ngModel)]="cita.tipocita"
           ></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>Estadio</ion-label>
+          <ion-label>Medico</ion-label>
 
           <ion-input
             type="text"
-            [(ngModel)]="equipo.estadio"
+            [(ngModel)]="cita.medico"
           ></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>Direccion</ion-label>
+          <ion-label>Paciente</ion-label>
 
           <ion-input
             type="text"
-            [(ngModel)]="equipo.direccion"
+            [(ngModel)]="cita.paciente"
           ></ion-input>
         </ion-item>
         <button

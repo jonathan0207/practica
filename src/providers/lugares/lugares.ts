@@ -9,23 +9,23 @@ export class LugaresProvider {
   }
 
   getLugares(){
-    return this.afdb.list('/lugares/')
+    return this.afdb.list('/medicos/')
   }
 
   getLugar(id){
-    return this.afdb.object('/lugares/'+id)
+    return this.afdb.object('/medicos/'+id)
   }
 
-  createLugar(lugar){
-    return this.afdb.database.ref('/lugares/'+ lugar.id).set(lugar);
+  createLugar(medico){
+    return this.afdb.database.ref('/medicos/'+ medico.id).set(medico);
   }
 
-  editarLugar(lugar){
-    return this.afdb.database.ref('/lugares/'+ lugar.id).set(lugar);
+  editarLugar(medico){
+    return this.afdb.database.ref('/medicos/'+ medico.id).set(medico);
   }
 
-  eliminarLugar(lugar){
-    return this.afdb.database.ref('/lugares/'+ lugar.id).remove(lugar);
+  eliminarLugar(medico){
+    return this.afdb.database.ref('/medicos/'+ medico.id).remove(medico);
   }
 
 }

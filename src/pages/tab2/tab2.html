@@ -1,11 +1,11 @@
 
 
 <ion-list>
-  <ion-item-sliding *ngFor="let equipo of equipos" (click)="irAdetallesExistentes()" >
+  <ion-item-sliding *ngFor="let cita of citas" (click)="irAdetallesExistentes()" >
     <ion-item>
-          <h2>{{equipo.nombre}}</h2>
-          <h3>{{equipo.estadio}}</h3>
-          <p>{{equipo.direccion}}</p>
+          <h2>{{cita.tipocita}}</h2>
+          <h3>{{cita.medico}}</h3>
+          <p>{{cita.paciente}}</p>
     </ion-item>
     <ion-item-options side="right">
       <button ion-button color="danger" (click)="borrar()">
@@ -17,4 +17,4 @@
 </ion-list>
 
 
-<button ion-button (click)="irAdetalles()">IR</button>
+<button ion-button (click)="irAdetalles()" color="secondary" full>Pedir Cita</button>

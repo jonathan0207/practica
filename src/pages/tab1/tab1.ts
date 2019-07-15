@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CitasProvider } from '../../providers/equipos/citas';
 
 /**
  * Generated class for the Tab1Page page.
@@ -15,7 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Tab1Page {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  citas: any = [];
+
+  cita: any = {};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public cp: CitasProvider) {
+
+    this.cp.getcitas().valueChanges()
+    .subscribe((citasFB:any=[])=>{this.citas=citasFB;})
   }
 
   ionViewDidLoad() {

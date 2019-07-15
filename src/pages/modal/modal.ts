@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angular';
-import { LugaresProvider } from '../../providers/lugares/lugares'
-import { TabsPage } from '../tabs/tabs';
-import { threadId } from 'worker_threads';
+import { LugaresProvider } from '../../providers/lugares/lugares';
 
 @IonicPage()
 @Component({
@@ -11,7 +9,7 @@ import { threadId } from 'worker_threads';
 })
 export class ModalPage {
 
-  lugar:any={};
+  medico:any={};
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public viewCtrl: ViewController, public lp:LugaresProvider) {
@@ -25,9 +23,9 @@ export class ModalPage {
 
   guardarLugar(){
   
-    this.lugar.id=Date.now();
-    this.lp.createLugar(this.lugar);
-    console.log(this.lugar);
+    this.medico.id=Date.now();
+    this.lp.createLugar(this.medico);
+    console.log(this.medico);
     alert('Se Guardo Con Exito');
     this.navCtrl.pop();
     // if(this.guardarLugar){

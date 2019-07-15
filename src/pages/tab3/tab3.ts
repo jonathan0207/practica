@@ -19,8 +19,7 @@ export class Tab3Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public modalCtrl:ModalController, public lp:LugaresProvider) {
-      this.lp.getLugares().valueChanges()
-      .subscribe((equiposFB)=>{this.lugares=equiposFB;})
+      
   }
 
   ionViewDidLoad() {
