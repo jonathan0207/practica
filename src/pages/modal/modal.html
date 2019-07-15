@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <button
+      ion-button="ion-button"
+      (click)="dismiss()"
+    >
+      <ion-icon
+        name="arrow-round-back"
+        showWhen="android,windows"
+      ></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="padding">
+  <body>
+    <ion-list>
+      <body>
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+
+          <ion-input
+            type="text"
+            [(ngModel)]="lugar.nombre"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Ocupacion</ion-label>
+
+          <ion-input
+            type="text"
+            [(ngModel)]="lugar.ocupacion"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Direccion</ion-label>
+
+          <ion-input
+            type="text"
+            [(ngModel)]="lugar.direccion"
+          ></ion-input>
+        </ion-item>
+        <button
+      ion-button
+      block="block"
+      (click)="guardarLugar()"
+    >Sign In</button>
+      </body>
+    </ion-list>
+
+    
+  </body>
+</ion-content>

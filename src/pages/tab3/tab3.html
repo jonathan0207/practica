@@ -1,0 +1,10 @@
+<ion-list>
+    <ion-item *ngFor="let lugar of lugares" (click)="irAdetallesExistentes()" >
+      <h2>{{lugar.nombre}}</h2>
+      <h3>{{lugar.ocupacion}}</h3>
+      <p>{{lugar.direccion}}</p>
+    </ion-item>
+</ion-list>
+
+<button ion-button (click)="irAdetalles()">IR</button>
+  
