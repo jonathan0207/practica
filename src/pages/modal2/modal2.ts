@@ -16,8 +16,11 @@ import { CitasProvider } from '../../providers/equipos/citas';
 export class Modal2Page {
 
   cita:any={};
-
+  Cita : string ='';
+;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController, public cp:CitasProvider) {
+
+    this.Cita= navParams.get('cita');
   }
 
   ionViewDidLoad() {

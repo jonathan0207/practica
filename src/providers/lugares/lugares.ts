@@ -25,7 +25,7 @@ export class LugaresProvider {
   }
 
   eliminarLugar(medico){
-    return this.afdb.database.ref('/medicos/'+ medico.id).remove(medico);
+    return this.afdb.database.ref('/medicos/'+ medico.id).remove();
   }
 
 }

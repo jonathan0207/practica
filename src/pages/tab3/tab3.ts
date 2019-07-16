@@ -13,12 +13,15 @@ import { LugaresProvider } from '../../providers/lugares/lugares';
 })
 export class Tab3Page {
 
-  lugares: any=[];
-  lugar:any={};
+  medicos: any=[];
+  // lugar:any={};
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public modalCtrl:ModalController, public lp:LugaresProvider) {
+
+      this.lp.getLugares().valueChanges()
+      .subscribe((medicosFB:any=[])=>{this.medicos=medicosFB;})
       
   }
 
@@ -26,14 +29,18 @@ export class Tab3Page {
     console.log('ionViewDidLoad Tab3Page');
   }
 
-  irAdetallesExistentes(){
-    this.navCtrl.push(ModalPage, {lugar:this.lugar})
+  irAdetallesExistentes(lugar){
+    this.navCtrl.push(ModalPage, {lugar: lugar})
 
   }
 
   irAdetalles(){
     const Modal =this.modalCtrl.create(ModalPage);
     Modal.present();
+    }
+
+    borrarM(medico) {
+      return this.lp.eliminarLugar(medico);
     }
  
 

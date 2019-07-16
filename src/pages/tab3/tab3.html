@@ -1,10 +1,23 @@
 <ion-list>
-    <ion-item *ngFor="let lugar of lugares" (click)="irAdetallesExistentes()" >
-      <h2>{{lugar.nombre}}</h2>
-      <h3>{{lugar.ocupacion}}</h3>
-      <p>{{lugar.direccion}}</p>
+    <ion-item-sliding  *ngFor="let medico of medicos" >
+      <ion-item (click)="irAdetallesExistentes()" >
+      <h2>Nombre: {{medico.nombre}}</h2>
+      <h3>Especialidad: {{medico.especialidad}}</h3>
+      <p>Area: {{medico.area}}</p>
     </ion-item>
+    <ion-item-options side="right">
+        <button ion-button color="danger" (click)="borrarM(medico)">
+          <ion-icon name="trash"></ion-icon>
+          Borrar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
 </ion-list>
+<footer>
 
-<button ion-button (click)="irAdetalles()" full>Agregar Medico</button>
+    <button ion-button (click)="irAdetalles()" full>Agregar Medico</button>
+</footer>
+
+
+
   

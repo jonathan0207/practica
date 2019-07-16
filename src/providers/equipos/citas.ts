@@ -26,7 +26,7 @@ export class CitasProvider {
   }
 
   eliminarcita(cita){
-    return this.afdb.database.ref('/citas/'+cita.id).remove(cita);
+    return this.afdb.database.ref('/citas/'+ cita.id).remove();
   }
 
 

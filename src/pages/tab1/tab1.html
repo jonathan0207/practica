@@ -10,10 +10,20 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let cita of citas" (click)="irAdetallesExistentes()" >
+    <ion-item-sliding *ngFor="let cita of citas" >
+      <ion-item  (click)="irAdetallesExistentes(cita)">
       <h2>Tipo Cita: {{cita.tipocita}}</h2>
       <h3>Medico Encargado: {{cita.medico}}</h3>
       <p>Paciente: {{cita.paciente}}</p>
     </ion-item>
+    <ion-item-options side="right">
+        <button ion-button color="danger" (click)="borrar(cita)">
+          <ion-icon name="trash"></ion-icon>
+          Borrar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
+
+
