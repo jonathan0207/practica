@@ -4,7 +4,6 @@ import {Tab1Page} from '../tab1/tab1';
 import { Tab2Page } from '../tab2/tab2';
 import { Tab3Page } from '../tab3/tab3';
 
-
 @IonicPage()
 @Component({
   selector: 'page-tabs',
@@ -14,7 +13,7 @@ export class TabsPage {
 
   tab1=Tab1Page;
   tab2=Tab2Page;
-  tab3=Tab3Page
+  tab3=Tab3Page;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

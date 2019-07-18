@@ -18,7 +18,8 @@ import { ModalPage } from '../pages/modal/modal';
 import { LugaresProvider } from '../providers/lugares/lugares';
 import { Modal2Page } from '../pages/modal2/modal2';
 import { CitasProvider } from '../providers/equipos/citas';
-
+import { EmailComposer } from '@ionic-native/email-composer';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 export const firebaseConfig = {
   apiKey: "AIzaSyBp9Km9DgFI9hpYe6SGMh7vEifCMC3S49w",
   authDomain: "prueba-7e6bf.firebaseapp.com",
@@ -37,16 +38,16 @@ export const firebaseConfig = {
     Tab2Page,
     Tab3Page,
     ModalPage,
-    Modal2Page
+    Modal2Page,
 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp , {backButtonText: 'Atras'}),
+    IonicModule.forRoot(MyApp, { backButtonText: 'Atras' }),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule
-    
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,15 +57,19 @@ export const firebaseConfig = {
     Tab2Page,
     Tab3Page,
     ModalPage,
-    Modal2Page
+    Modal2Page,
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EmailComposer,
+    CallNumber,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     LugaresProvider,
     CitasProvider
+
+
   ]
 })
-export class AppModule {}
+export class AppModule { }

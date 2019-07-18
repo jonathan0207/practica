@@ -16,7 +16,7 @@ export class Tab2Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
     public cp: CitasProvider) {
-     
+
   }
 
 

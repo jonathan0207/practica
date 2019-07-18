@@ -11,7 +11,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item-sliding *ngFor="let cita of citas" >
-      <ion-item  (click)="irAdetallesExistentes(cita)">
+      <ion-item >
       <h2>Tipo Cita: {{cita.tipocita}}</h2>
       <h3>Medico Encargado: {{cita.medico}}</h3>
       <p>Paciente: {{cita.paciente}}</p>

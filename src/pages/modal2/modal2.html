@@ -1,55 +1,45 @@
 <ion-header>
   <ion-navbar>
-    <button
-      ion-button="ion-button"
-      (click)="dismiss()"
-    >
-      <ion-icon
-        name="arrow-round-back"
-        showWhen="android,windows"
-      ></ion-icon>
+    <button ion-button="ion-button" (click)="dismiss()">
+      <ion-icon name="arrow-round-back" showWhen="android,windows"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding="padding">
+
   <body>
     <ion-list>
+
       <body>
         <ion-item>
           <ion-label>Tipo cita</ion-label>
 
-          <ion-input
-            type="text"
-            [(ngModel)]="cita.tipocita"
-          ></ion-input>
+          <ion-input type="text" [(ngModel)]="cita.tipocita"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label>Medico</ion-label>
 
-          <ion-input
-            type="text"
-            [(ngModel)]="cita.medico"
-          ></ion-input>
+          <ion-input type="text" [(ngModel)]="cita.medico"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label>Paciente</ion-label>
 
-          <ion-input
-            type="text"
-            [(ngModel)]="cita.paciente"
-          ></ion-input>
+          <ion-input type="text" [(ngModel)]="cita.paciente"></ion-input>
         </ion-item>
-        <button
-      ion-button
-      block="block"
-      (click)="guardarLugar()"
-    >Sign In</button>
+        <ion-item>
+          <ion-label>E-mail</ion-label>
+
+          <ion-input type="text" [(ngModel)]="cita.email"></ion-input>
+          <!-- <ion-input type="text" [(ngModel)]="email.to"></ion-input> -->
+        </ion-item>
+        <button ion-button block="block" (click)="guardarLugar()" (click)="enviarCorreo()">Guardar</button>
+        <button ion-button block="block" >Send</button>
       </body>
     </ion-list>
 
-    
+
   </body>
 </ion-content>

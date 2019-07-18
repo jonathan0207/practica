@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { CitasProvider } from '../../providers/equipos/citas';
+import { EmailComposer } from '@ionic-native/email-composer';
 /**
  * Generated class for the Modal2Page page.
  *
@@ -15,13 +16,34 @@ import { CitasProvider } from '../../providers/equipos/citas';
 })
 export class Modal2Page {
 
-  cita:any={};
-  Cita : string ='';
-;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController, public cp:CitasProvider) {
+  cita: any = {};
+  Cita: string = '';
+  subject = 'Tu cita';
+  body = 'Tu cita se Agendo correctamente el hospital se pondra en contracto contigo';
+  to = 'jonathanflorez07@gmail.com';
+  cc = this.cita.email;
 
-    this.Cita= navParams.get('cita');
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public cp: CitasProvider, public emailComposer: EmailComposer) {
+
+    this.Cita = navParams.get('cita');
   }
+
+  enviarCorreo() {
+    let email = {
+      to: this.to,
+      cc: this.cc,
+      bcc: [],
+      attachment: [],
+      subject: this.subject,
+      body: this.body,
+      isHtml: true,
+      app: 'Gmail'
+    };
+
+    this.emailComposer.open(email);
+    console.log(email);
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Modal2Page');
@@ -31,19 +53,19 @@ export class Modal2Page {
     this.viewCtrl.dismiss();
   }
 
-  guardarLugar(){
-    if(!this.cita.id){
-      this.cita.id=Date.now();
+  guardarLugar() {
+    if (!this.cita.id) {
+      this.cita.id = Date.now();
 
     } this.cp.createcita(this.cita);
     console.log(this.cita);
-    alert('Se Guardo Con Exito');
+    alert('Se Guardo Con Exito Tu Cita');
     this.navCtrl.pop();
     // if(this.guardarLugar){
     //   alert('error');
     // }else{
     //   alert('bien');
     // }
-  
+
   }
 }
